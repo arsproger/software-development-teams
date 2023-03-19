@@ -37,6 +37,7 @@ public class TeamService {
     }
 
     public Long deleteTeamById(Long id) {
+        teamRepository.findById(id).orElseThrow(TeamNotFountException::new);
         teamRepository.deleteById(id);
         return id;
     }

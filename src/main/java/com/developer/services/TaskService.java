@@ -37,6 +37,7 @@ public class TaskService {
     }
 
     public Long deleteTask(Long id) {
+        developerRepository.findById(id).orElseThrow(DeveloperNotFoundException::new);
         taskRepository.deleteById(id);
         return id;
     }

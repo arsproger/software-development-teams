@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -56,13 +57,16 @@ public class Developer {
     @Column(name = "reset_token_expire_time")
     private LocalDateTime resetTokenExpireTime;
 
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @ManyToOne
     @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
 
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "developer")
     private List<Task> tasks;
 
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "developer")
     private List<Report> reports;
 }

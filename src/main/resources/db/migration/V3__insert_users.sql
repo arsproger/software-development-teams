@@ -1,5 +1,5 @@
 INSERT INTO developer (email, full_name, password, position, role, status, team_id)
-VALUES ('admin@gmail.com', 'Admin', 'admin', 'ADMIN', 'ROLE_ADMIN', 'ACTIVE', 1);
+VALUES ('admin@gmail.com', 'Admin', '$2a$12$nSUQrLnmHCXJcid5DCVJ4ez3MIA.SGgQs.I4ZdQ3Kdk0KhJ6ORK9.', 'ADMIN', 'ROLE_ADMIN', 'ACTIVE', 1);
 -- 1
 INSERT INTO developer (email, full_name, password, position, role, status, team_id)
 VALUES ('john@gmail.com', 'John', '$2a$10$H5Wra2y1ajC4hRAbTBs6b.9H/cfvPUJuOKxMVkP/O54l15uMSagsi', 'JAVA DEV', 'ROLE_USER', 'ACTIVE', 1);

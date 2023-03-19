@@ -49,6 +49,7 @@ public class ReportService {
     }
 
     public Long delete(Long id) {
+        reportRepository.findById(id).orElseThrow(ReportNotFoundException::new);
         reportRepository.deleteById(id);
         return id;
     }

@@ -48,7 +48,7 @@ public class DeveloperService {
             return null;
 
         developer.setStatus(DevStatus.DELETED);
-        return id;
+        return developerRepository.save(developer).getId();
     }
 
     public Long updateDeveloper(Long id, Developer developer) {
@@ -57,7 +57,7 @@ public class DeveloperService {
             return null;
 
         existingDeveloper.setEmail(developer.getEmail());
-        existingDeveloper.setPassword(developer.getPassword());
+        existingDeveloper.setPassword(passwordEncoder.encode(developer.getPassword()));
         existingDeveloper.setFullName(developer.getFullName());
         existingDeveloper.setPosition(developer.getPosition());
         return developerRepository.save(existingDeveloper).getId();

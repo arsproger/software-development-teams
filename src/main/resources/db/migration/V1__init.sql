@@ -54,16 +54,16 @@ alter table developer
     add constraint UK_chmq1wdfnhjthxo65affwdnky unique (email);
 
 alter table developer
-    add constraint FKb0awdupi48yb8632o6jschhqw foreign key (team_id) references team;
+    add constraint FKb0awdupi48yb8632o6jschhqw foreign key (team_id) references team on delete cascade;
 
 alter table report
-    add constraint FK9nn3u8pta0twpflbxvvx07luf foreign key (developer_id) references developer;
+    add constraint FK9nn3u8pta0twpflbxvvx07luf foreign key (developer_id) references developer on delete cascade;
 
 alter table task
-    add constraint FKeacaw7uu1jgtof0posl41wqo4 foreign key (developer_id) references developer;
+    add constraint FKeacaw7uu1jgtof0posl41wqo4 foreign key (developer_id) references developer on delete cascade;
 
 alter table task_report
-    add constraint FKind2k1gyafmj311cf4muvr2hg foreign key (report_id) references report;
+    add constraint FKind2k1gyafmj311cf4muvr2hg foreign key (report_id) references report on delete cascade;
 
 alter table task_report
-    add constraint FKeujkcp6d3t6c5wb5hxtlbs6a3 foreign key (task_id) references task;
+    add constraint FKeujkcp6d3t6c5wb5hxtlbs6a3 foreign key (task_id) references task on delete cascade;
